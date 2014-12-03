@@ -1113,7 +1113,7 @@ class ZipFile(object):
                 raise LargeZipFile(requires_zip64 +
                                    " would require ZIP64 extensions")
 
-    def writebuttered(self, zinfo_or_arcname, file_pointer, file_size, compress_type=None):
+    def writebuffered(self, zinfo_or_arcname, file_pointer, file_size, compress_type=None):
         if not isinstance(zinfo_or_arcname, ZipInfo):
             zinfo = ZipInfo(filename=zinfo_or_arcname,
                             date_time=time.localtime(time.time())[:6])
